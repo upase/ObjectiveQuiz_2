@@ -23,7 +23,7 @@ public class QuizActivity extends AppCompatActivity {
     Random rand=new Random();
     private TextView questext;
     static final String STATE_NUM = "NOthing";
-//checking for commit
+//checking for commi
 
 
     private static final String TAG = "QuizActivity";
