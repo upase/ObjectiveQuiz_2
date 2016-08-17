@@ -1,36 +1,36 @@
 package in.ac.iiitd.psingh.mc16.objectivequiz;
 
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 import java.util.Random;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private Button mTrueButton;
-    private Button mFalseButton;
-    private Button mNextButton;
+
     int randnum=0;
     Random rand=new Random();
     private TextView questext;
     static final String STATE_NUM = "NOthing";
-//checking for commi
+
 
 
     private static final String TAG = "QuizActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Button mTrueButton;
+        Button mFalseButton;
+        Button mNextButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        //Check if there is a saved state
         if (savedInstanceState != null) {
             // Restore value of members from saved state
             randnum = savedInstanceState.getInt(STATE_NUM);
@@ -49,8 +49,8 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Log.d(TAG, "Clicked True");
-                boolean val=isprime(randnum);
-                if(val==true)
+
+                if(isprime(randnum))
                 {
                     Toast.makeText(getApplicationContext(),"Your Answer is Right",Toast.LENGTH_SHORT).show();
                 }
@@ -68,8 +68,8 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "Clicked False");
-                boolean val=isprime(randnum);
-                if(val==false)
+
+                if(!isprime(randnum))
                 {
                     Toast.makeText(getApplicationContext(),"Your Answer is Right",Toast.LENGTH_SHORT).show();
                 }
@@ -85,6 +85,7 @@ public class QuizActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //on next creates a random number a shows it in Text view
                 randnum=rand.nextInt(1000 - 1) + 1;
                 questext.setText("Is "+randnum+" a prime number?");
 
@@ -136,6 +137,7 @@ public class QuizActivity extends AppCompatActivity {
 
     public boolean isprime(int num)
     {
+        //function to check if number is prime or not
         float limit=(float)Math.sqrt(num);
         if(num==1)
         {return false;}
@@ -143,6 +145,7 @@ public class QuizActivity extends AppCompatActivity {
         {return true;}
         else
         {
+            //runs till root of the given number and checks if divisible by each one
             for (int i = 2; i <= limit; i++)
             {
                 if (num % i == 0)
@@ -155,10 +158,5 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-       // randnum = savedInstanceState.getInt(STATE_SCORE);
 
-    }
 }
