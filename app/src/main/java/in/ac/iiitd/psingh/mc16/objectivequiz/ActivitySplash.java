@@ -13,7 +13,7 @@ public class ActivitySplash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_splash);
 
-
+        //handler runs in postdelay function so it waits for 2000 sec to execute line of codes inside it
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
