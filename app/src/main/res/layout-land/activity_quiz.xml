@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="left|center_vertical"
-        android:background="@color/switch_thumb_normal_material_dark">
+        android:background="@color/primary_dark_material_light">
 
 
         <TextView
@@ -22,7 +22,7 @@
             android:textSize="23dp"
             android:layout_above="@+id/FalseButton"
             android:layout_centerHorizontal="true"
-            android:textColor="#090909" />
+            android:textColor="@android:color/white" />
         <Button
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
