@@ -96,7 +96,7 @@ public class QuizActivity extends AppCompatActivity {
         });
 
         mHintButton=(Button)findViewById(R.id.hint_button);
-        mNextButton.setOnClickListener(new View.OnClickListener() {
+        mHintButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

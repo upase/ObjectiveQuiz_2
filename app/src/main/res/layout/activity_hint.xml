@@ -17,8 +17,9 @@
         android:text="If it is an even number\n Except 2 \nIt is definately not Prime.\nFor odd see prime factors \nNo shortcuts there!"
         android:id="@+id/textView"
         android:textAlignment="center"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:focusableInTouchMode="false"
-        android:textColor="@color/abc_primary_text_material_dark" />
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:layout_marginTop="167dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
