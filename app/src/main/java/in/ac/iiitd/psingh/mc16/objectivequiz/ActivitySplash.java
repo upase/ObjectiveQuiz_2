@@ -2,9 +2,11 @@ package in.ac.iiitd.psingh.mc16.objectivequiz;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.Toast;
 
 public class ActivitySplash extends AppCompatActivity {
 
@@ -20,10 +22,14 @@ public class ActivitySplash extends AppCompatActivity {
                 //an intent to main function and deletion of this activity from stack
                 //so as to avoid reappearance of splash screen on pressing back button
                 Intent Quizactivityintent=new Intent(getApplicationContext(),QuizActivity.class);
-                startActivity(Quizactivityintent);
+                startActivityForResult(Quizactivityintent,1);
                 ActivitySplash.this.finish();
             }
         },2000);
 
+
+
     }
+
+
 }

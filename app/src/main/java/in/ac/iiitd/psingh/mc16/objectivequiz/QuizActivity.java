@@ -101,10 +101,21 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent hintactivityintent=new Intent(getApplicationContext(),HintActivity.class);
-                startActivity(hintactivityintent);
+                startActivityForResult(hintactivityintent,1);
             }
         });
 
+        mCheatButton=(Button)findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent cheatactivityintent=new Intent(getApplicationContext(),CheatActivity.class);
+                cheatactivityintent.putExtra("Randnumber",randnum);
+                startActivityForResult(cheatactivityintent,1);
+
+            }
+        });
 
     }
 
@@ -171,5 +182,19 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+        Log.d(TAG, "Inside ActivityResult");
+        boolean hintcheck=data.getBooleanExtra("HintUsed",false);
+        boolean cheatcheck=data.getBooleanExtra("CheatUsed",false);
+        if(hintcheck==true)
+        {
+            Toast.makeText(getApplicationContext(),"Hint Used",Toast.LENGTH_SHORT).show();
+        }
+        if(cheatcheck==true)
+        {
+            Toast.makeText(getApplicationContext(),"Cheat Used",Toast.LENGTH_SHORT).show();
+        }
+    }
 }
