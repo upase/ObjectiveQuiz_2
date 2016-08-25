@@ -52,5 +52,28 @@
         android:layout_height="wrap_content"
         android:text="@string/nextText"
         android:layout_gravity="center_horizontal" />
+<RelativeLayout android:layout_height="101dp" android:layout_width="match_parent">
+    <Button
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:text="Hint"
+        android:id="@+id/hint_button"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/cheat_button"
+        android:layout_toStartOf="@+id/cheat_button" />
 
-    </LinearLayout>
+    <Button
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:text="Cheat"
+        android:id="@+id/cheat_button"
+        android:layout_weight="0.04"
+        android:layout_gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="61dp"
+        android:layout_marginEnd="61dp" />
+    </RelativeLayout>
+
+</LinearLayout>

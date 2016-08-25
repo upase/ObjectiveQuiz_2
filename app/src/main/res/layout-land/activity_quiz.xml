@@ -57,7 +57,33 @@
             android:layout_marginStart="44dp"
             android:drawableLeft="@drawable/arrow_left"/>
 
+        <Button
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
+            android:text="Hint"
+            android:id="@+id/hint_button"
+            android:layout_below="@+id/TrueButton"
+            android:layout_alignRight="@+id/TrueButton"
+            android:layout_alignEnd="@+id/TrueButton"
+            android:layout_alignBottom="@+id/cheat_button"
+            android:layout_alignLeft="@+id/TrueButton"
+            android:layout_alignStart="@+id/TrueButton" />
+
+        <Button
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
+            android:text="Cheat"
+            android:id="@+id/cheat_button"
+            android:layout_weight="0.04"
+            android:layout_gravity="right"
+            android:layout_toRightOf="@+id/TrueButton"
+            android:layout_below="@+id/FalseButton"
+            android:layout_alignRight="@+id/FalseButton"
+            android:layout_alignEnd="@+id/FalseButton" />
+
     </RelativeLayout>
 
+    <RelativeLayout android:layout_height="101dp" android:layout_width="match_parent">
 
+    </RelativeLayout>
 </FrameLayout>

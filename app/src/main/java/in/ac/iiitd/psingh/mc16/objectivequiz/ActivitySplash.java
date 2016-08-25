@@ -17,6 +17,8 @@ public class ActivitySplash extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                //an intent to main function and deletion of this activity from stack
+                //so as to avoid reappearance of splash screen on pressing back button
                 Intent Quizactivityintent=new Intent(getApplicationContext(),QuizActivity.class);
                 startActivity(Quizactivityintent);
                 ActivitySplash.this.finish();

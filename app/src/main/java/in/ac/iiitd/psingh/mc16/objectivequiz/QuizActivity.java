@@ -1,5 +1,6 @@
 package in.ac.iiitd.psingh.mc16.objectivequiz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,8 @@ public class QuizActivity extends AppCompatActivity {
         Button mTrueButton;
         Button mFalseButton;
         Button mNextButton;
+        Button mHintButton;
+        Button mCheatButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
@@ -89,6 +92,16 @@ public class QuizActivity extends AppCompatActivity {
                 randnum=rand.nextInt(1000 - 1) + 1;
                 questext.setText("Is "+randnum+" a prime number?");
 
+            }
+        });
+
+        mHintButton=(Button)findViewById(R.id.hint_button);
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent hintactivityintent=new Intent(getApplicationContext(),HintActivity.class);
+                startActivity(hintactivityintent);
             }
         });
 
